@@ -21,6 +21,7 @@ module.exports = {
       let errorMessage = await errorHandler(error);
       res.status(errorMessage.status).json({
         message: errorMessage.message,
+        status: errorMessage.status,
       });
     }
   },
@@ -51,6 +52,7 @@ module.exports = {
     } catch (error) {
       res.status(500).json({
         message: error.message,
+        status: 500,
       });
     }
   },
